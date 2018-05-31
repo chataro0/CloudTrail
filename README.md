@@ -1,6 +1,6 @@
 # View CloudTrail on HTML
 
-```bash
+```shell
 pip install -r requirement.txt
 python main.py
 ```
