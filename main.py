@@ -9,7 +9,7 @@ def get_root():
     credentials = {
         "aws_access_key_id": os.environ["aws_access_key_id"],
         "aws_secret_access_key": os.environ["aws_secret_access_key"],
-        "region_name": "ap-northeast-1"
+        "region_name": os.environ.get("region_name", "ap-northeast-1")
     }
     return get(credentials)
 
