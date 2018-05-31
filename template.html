@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <link type="text/css" rel="stylesheet" href="/static/cmp/assets/css/main.css">
+        </style>
+    </head>
+    <body>
+        <table border='1' cellspacing='0' cellpadding='0' bgcolor='#FFFFFF'>
+        <tr>
+            <td>EventTime</td>
+            <td>EventName</td>
+            <td>Username</td>
+            <td>Resources</td>
+        </tr>
+        {% for event in Events %}
+        <tr>
+            <td>{{ event.EventTime }}</td>
+            <td>{{ event.EventName }}</td>
+            <td>{{ event.Username }}</td>
+            <td>
+                {% for resource in event.Resources %}
+                {{ resource.ResourceType | default("ResourceName") }} : {{ resource.ResourceName }} <br>
+                {% endfor %}
+            </td>
+        </tr>
+        {% endfor %}
+        </table>
+    </body>
+</html>
